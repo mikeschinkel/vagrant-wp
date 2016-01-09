@@ -1,5 +1,5 @@
-UPDATE mysql.user SET Password = PASSWORD('vagrant'), Plugin = '' WHERE User = 'root';
-DELETE FROM mysql.user WHERE User = 'root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
-DELETE FROM mysql.user WHERE User = '';
-DELETE FROM mysql.db WHERE Db = 'test' OR Db = 'test\_%';
+#CREATE USER 'root'@'localhost' IDENTIFIED BY 'vagrant';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION;
+CREATE USER 'root'@'%' IDENTIFIED BY 'vagrant';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
