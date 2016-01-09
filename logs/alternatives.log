@@ -1,0 +1,6 @@
+update-alternatives 2016-01-09 09:37:42: run with --install /etc/mysql/my.cnf my.cnf /etc/mysql/my.cnf.fallback 100
+update-alternatives 2016-01-09 09:37:42: link group my.cnf updated to point to /etc/mysql/my.cnf.fallback
+update-alternatives 2016-01-09 09:37:42: run with --install /etc/mysql/my.cnf my.cnf /etc/mysql/mariadb.cnf 200
+update-alternatives 2016-01-09 09:37:42: link group my.cnf updated to point to /etc/mysql/mariadb.cnf
+update-alternatives 2016-01-09 09:38:05: run with --install /usr/bin/php php /usr/bin/php5 50 --slave /usr/share/man/man1/php.1.gz php.1.gz /usr/share/man/man1/php5.1.gz
+update-alternatives 2016-01-09 09:38:05: link group php updated to point to /usr/bin/php5
