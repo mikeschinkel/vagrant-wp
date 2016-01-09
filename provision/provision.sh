@@ -61,7 +61,9 @@ file_replace "sites-available/${DOMAIN}.conf" \
 	"server_name {domain};" \
 	"server_name ${DOMAIN};"
 echo "Enabling domain ${DOMAIN} for Nginx ..."
-sudo ln -s sites-available/${DOMAIN}.conf sites-enabled/${DOMAIN}.conf
+sudo ln -s \
+	/etc/nginx/sites-available/${DOMAIN}.conf \
+	/etc/nginx/sites-enabled/${DOMAIN}.conf
 echo "Restarting Nginx ..."
 sudo service nginx restart
 
