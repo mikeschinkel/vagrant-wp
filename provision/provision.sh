@@ -75,11 +75,13 @@ echo "Set Root Password for MariaDB [--user=root --password=vagrant]..."
 sudo mysql --user=root --batch --database=mysql < /vagrant/provision/root-init.sql
 cd /etc/mysql/
 # See http://stackoverflow.com/a/6817713/102699
-# See http://stackoverflow.com/a/6337930/102699 (REBOOT REQUIRED!)
+# See http://stackoverflow.com/a/6337930/102699
 file_replace "mariadb.conf.d/mysqld.cnf" \
 	"bind-address.+= 127.0.0.1" \
 	"bind-address = 0.0.0.0" \
 	"-r"
+echo "Restarting MariaDB ..."
+sudo service mysql restart
 
 #PHP
 echo "Installing PHP 5.6 ..."
@@ -95,7 +97,4 @@ file_replace "/etc/php5/fpm/pool.d/www.conf" \
 
 cd ${STARTDIR}
 
-echo "Provision Complete. Rebooting Vagrant Box NOW ..."
-sudo reboot now
-sleep 10
-echo "Provisioned Vagrant Box should be available now, or very soon..."
+echo "Provision Complete."
