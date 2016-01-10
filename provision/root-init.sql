@@ -1,5 +1,7 @@
-#CREATE USER 'root'@'localhost' IDENTIFIED BY 'vagrant';
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION;
-CREATE USER 'root'@'%' IDENTIFIED BY 'vagrant';
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+# noinspection SqlNoDataSourceInspectionForFile
+
+CREATE DATABASE IF NOT EXISTS wplib CHARSET utf8mb4 COLLATE utf8mb4_general_ci;
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY 'vagrant' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'vagrant' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
+
