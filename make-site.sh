@@ -14,4 +14,11 @@ ln -s /vagrant/wp/${WP_VER} /srv/sites/${DOMAIN}/www/wp
 
 cd ${SAVE_DIR}
 
+# Copy provision script to website to it can be called
+cp provision/provision.php sites/${DOMAIN}/www
+# Run provision script to import initial database(s)
+wget http://${DOMAIN}/provision.php?go=yes
+# Delete provision script from website
+rm sites/${DOMAIN}/www
+
 vagrant reload
