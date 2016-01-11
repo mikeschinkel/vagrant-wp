@@ -90,7 +90,12 @@ file_replace "/etc/php5/fpm/pool.d/www.conf" \
 echo "Eliminating Nginx Timeouts (max_execution_time=86,400 aka 1 day) ..."
 file_replace "/etc/php5/fpm/php.ini" \
 	"max_execution_time = 30" \
-	"max_execution_time = 86400"
+	"max_execution_time=86400"
+
+echo "Stop PHP trying to fix broken URLs ..."
+file_replace "/etc/php5/fpm/php.ini" \
+	";cgi.fix_pathinfo=1" \
+	"cgi.fix_pathinfo=0"
 
 
 echo "Restarting PHP FPM ..."
