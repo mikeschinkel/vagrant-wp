@@ -46,16 +46,16 @@ Vagrant.configure(2) do |config|
     mount_options: ["dmode=775", "fmode=664"]
 
 	# Make PHP config files accessible via Host
-  config.vm.synced_folder \
-    "config/php", "/etc/php/fpm", \
-    owner: 'vagrant', group: 'vagrant', \
-    mount_options: ["dmode=775", "fmode=664"]
+#  config.vm.synced_folder \
+#    "config/php", "/etc/php/fpm", \
+#    owner: 'vagrant', group: 'vagrant', \
+#    mount_options: ["dmode=775", "fmode=664"]
 
 	# Make MariaDB config files accessible via Host
-  config.vm.synced_folder \
-    "config/mysql", "/etc/mysql", \
-    owner: 'vagrant', group: 'vagrant', \
-    mount_options: ["dmode=775", "fmode=664"]
+#  config.vm.synced_folder \
+#    "config/mysql", "/etc/mysql", \
+#    owner: 'vagrant', group: 'vagrant', \
+#    mount_options: ["dmode=775", "fmode=664"]
 
 	config.vm.provision "shell", path: "provision/provision.sh"
 

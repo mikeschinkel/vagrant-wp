@@ -10,7 +10,7 @@ GIT_REPO="$3"
 
 cd ${PWD}/sites
 git clone ${GIT_REPO} ${DOMAIN}
-ln -s /vagrant/wp/${WP_VER} /srv/sites/${DOMAIN}/www/wp
+composer install --prefer-source
 
 cd ${SAVE_DIR}
 
