@@ -27,35 +27,11 @@ Vagrant.configure(2) do |config|
     owner: 'www-data', group: 'www-data', \
     mount_options: ["dmode=775", "fmode=664"]
 
-	# Make Server Logs accessible via Host
-  config.vm.synced_folder \
-    "logs", "/var/log", \
-    owner: 'root', group: 'root', \
-    mount_options: ["dmode=777", "fmode=777"]
-
 	# Provide a root directory to provision scripts
   config.vm.synced_folder \
     "provision", "/provision", \
     owner: 'root', group: 'root', \
     mount_options: ["dmode=777", "fmode=777"]
-
-	# Make Nginx config files accessible via Host
-  config.vm.synced_folder \
-    "config/nginx", "/etc/nginx", \
-    owner: 'vagrant', group: 'vagrant', \
-    mount_options: ["dmode=775", "fmode=664"]
-
-	# Make PHP config files accessible via Host
-  config.vm.synced_folder \
-    "config/php", "/etc/php5/fpm", \
-    owner: 'vagrant', group: 'vagrant', \
-    mount_options: ["dmode=775", "fmode=664"]
-
-	# Make MariaDB config files accessible via Host
-  config.vm.synced_folder \
-    "config/mysql", "/etc/mysql", \
-    owner: 'vagrant', group: 'vagrant', \
-    mount_options: ["dmode=775", "fmode=664"]
 
 	config.vm.provision "shell", path: "provision/provision.sh"
 
