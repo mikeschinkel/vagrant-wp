@@ -1,0 +1,10 @@
+{
+    "name": "mikeschinkel/wplib.box",
+    "description": "A New and Better Approach to using Vagrant for WordPress Development",
+    "authors": [
+        {
+            "name": "Mike Schinkel",
+            "email": "mike@newclarity.net"
+        }
+    ]
+}
