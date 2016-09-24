@@ -1,8 +1,8 @@
 # WordPress on Vagrant+Bash Script from Scratch
  
-##DO NOT USE
+##Use WPLib Box Instead
 
-Instead, use [**WPLib Box**](/wplib/wplib-box) which is 1000% better and also supported!
+Do not use this repo.  Instead, use [**WPLib Box**](/wplib/wplib-box) which is 1000% better and also supported!
  
 ----
 This project is a proof of concept for building a Vagrant box.  
